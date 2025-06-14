@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items iblockUid="Catalog:Catalog" exchangeVersion="2" >
+<item>
+ <field name="ACTIVE">
+  <value>Y</value>
+ </field>
+ <field name="ACTIVE_FROM"/>
+ <field name="ACTIVE_TO"/>
+ <field name="SORT">
+  <value>500</value>
+ </field>
+ <field name="NAME">
+  <value>Оградка ОК-5</value>
+ </field>
+ <field name="PREVIEW_PICTURE">
+  <value name="0ad7fbb984fc50f0761ad936dcbf5780c04ed848.jpg" type="file">iblock/84d/0nhoff4f884l7jam9d9yl34nfcymciev.jpg</value>
+ </field>
+ <field name="PREVIEW_TEXT">
+  <value>Классическая кованая модель  с элементами завитков.</value>
+ </field>
+ <field name="PREVIEW_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="DETAIL_PICTURE">
+  <value name="0ad7fbb984fc50f0761ad936dcbf5780c04ed848.jpg" type="file">iblock/84d/0nhoff4f884l7jam9d9yl34nfcymciev.jpg</value>
+ </field>
+ <field name="DETAIL_TEXT"/>
+ <field name="DETAIL_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="CODE">
+  <value>ogradka-ok-5</value>
+ </field>
+ <field name="TAGS"/>
+ <field name="XML_ID">
+  <value>1</value>
+ </field>
+ <field name="IBLOCK_SECTION"/>
+ <field name="IPROPERTY_TEMPLATES"/>
+</item>
+<item>
+ <field name="ACTIVE">
+  <value>Y</value>
+ </field>
+ <field name="ACTIVE_FROM"/>
+ <field name="ACTIVE_TO"/>
+ <field name="SORT">
+  <value>500</value>
+ </field>
+ <field name="NAME">
+  <value>Оградка ОМПУ-04</value>
+ </field>
+ <field name="PREVIEW_PICTURE">
+  <value name="e00085d3aeb068c33c42fa9cf4dd2aa47c059800.png" type="file">iblock/7fe/kg37da7aug6lajtonprutmk9pmmj51ai.png</value>
+ </field>
+ <field name="PREVIEW_TEXT"/>
+ <field name="PREVIEW_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="DETAIL_PICTURE">
+  <value name="e00085d3aeb068c33c42fa9cf4dd2aa47c059800.png" type="file">iblock/7fe/kg37da7aug6lajtonprutmk9pmmj51ai.png</value>
+ </field>
+ <field name="DETAIL_TEXT">
+  <value>Классическая кованая модель  с элементами завитков.</value>
+ </field>
+ <field name="DETAIL_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="CODE">
+  <value>ogradka-ompu-04</value>
+ </field>
+ <field name="TAGS"/>
+ <field name="XML_ID">
+  <value>2</value>
+ </field>
+ <field name="IBLOCK_SECTION"/>
+ <field name="IPROPERTY_TEMPLATES"/>
+</item>
+<item>
+ <field name="ACTIVE">
+  <value>Y</value>
+ </field>
+ <field name="ACTIVE_FROM"/>
+ <field name="ACTIVE_TO"/>
+ <field name="SORT">
+  <value>500</value>
+ </field>
+ <field name="NAME">
+  <value>Оградка ОМК-012</value>
+ </field>
+ <field name="PREVIEW_PICTURE">
+  <value name="66ebf145d4a078b472cfd0b94930d8d2871f0c3f.png" type="file">iblock/ecc/oxyub7m9fbdkznahr4ipyacu5ou8b45b.png</value>
+ </field>
+ <field name="PREVIEW_TEXT"/>
+ <field name="PREVIEW_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="DETAIL_PICTURE">
+  <value name="66ebf145d4a078b472cfd0b94930d8d2871f0c3f.png" type="file">iblock/ecc/oxyub7m9fbdkznahr4ipyacu5ou8b45b.png</value>
+ </field>
+ <field name="DETAIL_TEXT">
+  <value>Классическая кованая модель  с элементами завитков.</value>
+ </field>
+ <field name="DETAIL_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="CODE">
+  <value>ogradka-omk-012</value>
+ </field>
+ <field name="TAGS"/>
+ <field name="XML_ID">
+  <value>3</value>
+ </field>
+ <field name="IBLOCK_SECTION"/>
+ <field name="IPROPERTY_TEMPLATES"/>
+</item>
+<item>
+ <field name="ACTIVE">
+  <value>Y</value>
+ </field>
+ <field name="ACTIVE_FROM"/>
+ <field name="ACTIVE_TO"/>
+ <field name="SORT">
+  <value>500</value>
+ </field>
+ <field name="NAME">
+  <value>Оградка ОК-5 2</value>
+ </field>
+ <field name="PREVIEW_PICTURE">
+  <value name="0ad7fbb984fc50f0761ad936dcbf5780c04ed848 (2).jpg" type="file">iblock/84d/0nhoff4f884l7jam9d9yl34nfcymciev.jpg</value>
+ </field>
+ <field name="PREVIEW_TEXT">
+  <value>Классическая кованая модель  с элементами завитков.</value>
+ </field>
+ <field name="PREVIEW_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="DETAIL_PICTURE">
+  <value name="0ad7fbb984fc50f0761ad936dcbf5780c04ed848 (2).jpg" type="file">iblock/84d/0nhoff4f884l7jam9d9yl34nfcymciev.jpg</value>
+ </field>
+ <field name="DETAIL_TEXT"/>
+ <field name="DETAIL_TEXT_TYPE">
+  <value>text</value>
+ </field>
+ <field name="CODE">
+  <value>ogradka-ok-5-2</value>
+ </field>
+ <field name="TAGS"/>
+ <field name="XML_ID">
+  <value>4</value>
+ </field>
+ <field name="IBLOCK_SECTION"/>
+ <field name="IPROPERTY_TEMPLATES"/>
+</item>
+
+</items>

@@ -1,0 +1,38 @@
+services:
+  nuxt:
+    image: node:22-alpine3.21
+    container_name: ${COMPOSE_PROJECT_NAME}-nuxt
+    restart: ${COMPOSE_RESTART_POLICY}
+    command: >
+      sh -c '
+        mkdir -p /nuxt/app &&
+        cd /nuxt/app &&
+        npm install &&
+        npm run dev
+      '
+    environment:
+      HOST: 0.0.0.0
+    volumes:
+      - ./nuxt/:/nuxt/app
+      - node_modules:/nuxt/app/node_modules
+    ports:
+      - 3000:3000
+    labels:
+      - "traefik.enable=true"
+
+      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.rule=(Host(`${NODE_HOST}`) || Host(`www.${NODE_HOST}`)) && !PathPrefix(`/images/`) && !PathPrefix(`/upload/`)"
+      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.entrypoints=https"
+      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.tls=true"
+      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.tls.certresolver=${PROJECT_CERT_RESOLVER}"
+      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.middlewares=${PROJECT_SSL_MIDDLEWARES}"
+
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.rule=(Host(`${NODE_HOST}`) || Host(`www.${NODE_HOST}`)) && !PathPrefix(`/images/`) && !PathPrefix(`/upload/`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.entrypoints=http"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.middlewares=${PROJECT_MIDDLEWARES}"
+
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}-nuxt.loadbalancer.server.port=3000"
+    networks:
+      - ${COMPOSE_NETWORK_NAME}
+
+volumes:
+  node_modules:
