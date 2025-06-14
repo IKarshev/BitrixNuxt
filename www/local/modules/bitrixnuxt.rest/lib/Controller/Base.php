@@ -11,7 +11,7 @@ class Base extends Controller
         return array(
             '_global' => [
                 'getCatalogSectionList' => [
-                    'callback' => ['Bitrixnuxt\\Rest\\RestRequests\\Test', 'getTest'],
+                    'callback' => ['Bitrixnuxt\\Rest\\RestRequests\\Catalog', 'getSections'],
                     'options' => array(),
                 ],
             ],

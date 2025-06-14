@@ -20,12 +20,14 @@ services:
     labels:
       - "traefik.enable=true"
 
+      # HTTPS
       # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.rule=(Host(`${NODE_HOST}`) || Host(`www.${NODE_HOST}`)) && !PathPrefix(`/images/`) && !PathPrefix(`/upload/`)"
       # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.entrypoints=https"
       # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.tls=true"
       # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.tls.certresolver=${PROJECT_CERT_RESOLVER}"
       # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt-ssl.middlewares=${PROJECT_SSL_MIDDLEWARES}"
 
+      # HTTP
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.rule=(Host(`${NODE_HOST}`) || Host(`www.${NODE_HOST}`)) && !PathPrefix(`/images/`) && !PathPrefix(`/upload/`)"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.entrypoints=http"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-nuxt.middlewares=${PROJECT_MIDDLEWARES}"
