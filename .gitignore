@@ -1,24 +1,8 @@
-node_modules/
-/vendor/
-
 .idea/
 .DS_Store
 Thumbs.db
 
-/www/bitrix
-/www/upload
-# /www/images
-/www/tmp
-
 gitDeploy.php
-
-/www/robots.txt
-/www/.htsecure
-
-/www/sitemap.xml
-/www/sitemap_files.xml
-/www/sitemap*.xml
-/www/*sitemap*.xml
 
 .env
 
