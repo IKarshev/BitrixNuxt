@@ -2,11 +2,11 @@
 
 namespace Sprint\Migration;
 
-class Version20250614063355 extends Version
+class Version20250614200444 extends Version
 {
     protected $author = "admin";
 
-    protected $description   = "Элементы каталога";
+    protected $description   = "Каталог - элементы";
 
     protected $moduleVersion = "5.0.2";
 

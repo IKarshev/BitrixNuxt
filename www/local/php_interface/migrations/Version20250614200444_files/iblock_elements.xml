@@ -35,7 +35,9 @@
  <field name="XML_ID">
   <value>1</value>
  </field>
- <field name="IBLOCK_SECTION"/>
+ <field name="IBLOCK_SECTION">
+  <value>Оградки|1|ogradki</value>
+ </field>
  <field name="IPROPERTY_TEMPLATES"/>
 </item>
 <item>
@@ -73,7 +75,9 @@
  <field name="XML_ID">
   <value>2</value>
  </field>
- <field name="IBLOCK_SECTION"/>
+ <field name="IBLOCK_SECTION">
+  <value>Оградки|1|ogradki</value>
+ </field>
  <field name="IPROPERTY_TEMPLATES"/>
 </item>
 <item>
@@ -111,7 +115,9 @@
  <field name="XML_ID">
   <value>3</value>
  </field>
- <field name="IBLOCK_SECTION"/>
+ <field name="IBLOCK_SECTION">
+  <value>Оградки|1|ogradki</value>
+ </field>
  <field name="IPROPERTY_TEMPLATES"/>
 </item>
 <item>
@@ -149,7 +155,9 @@
  <field name="XML_ID">
   <value>4</value>
  </field>
- <field name="IBLOCK_SECTION"/>
+ <field name="IBLOCK_SECTION">
+  <value>Оградки|1|ogradki</value>
+ </field>
  <field name="IPROPERTY_TEMPLATES"/>
 </item>
 

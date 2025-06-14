@@ -3,7 +3,7 @@
 namespace Sprint\Migration;
 
 
-class Version20250614063326 extends Version
+class Version20250614200422 extends Version
 {
     protected $author = "admin";
 
@@ -54,8 +54,8 @@ class Version20250614063326 extends Version
   'ACTIVE' => 'Y',
   'SORT' => '500',
   'LIST_PAGE_URL' => '#SITE_DIR#/',
-  'DETAIL_PAGE_URL' => '#SITE_DIR#/',
-  'SECTION_PAGE_URL' => '#SITE_DIR#/',
+  'DETAIL_PAGE_URL' => '#SITE_DIR#/catalog/#SECTION_CODE#/#ELEMENT_CODE#/',
+  'SECTION_PAGE_URL' => '#SITE_DIR#/catalog/#SECTION_CODE#/',
   'CANONICAL_PAGE_URL' => '',
   'PICTURE' => NULL,
   'DESCRIPTION' => '',
@@ -406,6 +406,35 @@ class Version20250614063326 extends Version
   'everyone' => 'R',
 ));
     $helper->UserOptions()->saveElementGrid($iblockId, array (
+  'views' => 
+  array (
+    'default' => 
+    array (
+      'columns' => 
+      array (
+        0 => '',
+      ),
+      'columns_sizes' => 
+      array (
+        'expand' => 1,
+        'columns' => 
+        array (
+        ),
+      ),
+      'sticked_columns' => 
+      array (
+      ),
+      'custom_names' => 
+      array (
+      ),
+    ),
+  ),
+  'filters' => 
+  array (
+  ),
+  'current_view' => 'default',
+));
+    $helper->UserOptions()->saveSectionGrid($iblockId, array (
   'views' => 
   array (
     'default' => 

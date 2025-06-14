@@ -1,8 +1,11 @@
 <script setup lang="ts">
-    const route = useRoute()
+    import sectionElementList from "@/components/catalog/sectionElementList.vue";
 </script>
+
 <template>
-    <pre>
-        {{ route.params.section_code }}
-    </pre>
+    <div class="wrapper">
+        <div class="container">
+            <sectionElementList></sectionElementList>
+        </div>
+    </div>
 </template>
