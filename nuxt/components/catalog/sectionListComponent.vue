@@ -4,14 +4,16 @@
 
 <template>
     <div class="section-list">
-        <a :href="section.SECTION_PAGE_URL" class="section-item" v-for="(section, key) in posts.result">
+        <NuxtLink :to="section.SECTION_PAGE_URL" class="section-item" v-for="(section, key) in posts">
+        <!-- <a :href="section.SECTION_PAGE_URL" class="section-item" v-for="(section, key) in posts"> -->
             <div class="section-item-name">
                 {{ section.NAME }}
             </div>
             <div class="section-item-image">
                 <img :src="section.PICTURE.SRC" alt="">
             </div>
-        </a>
+        <!-- </a> -->
+        </NuxtLink>
     </div>
 </template>
 

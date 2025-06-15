@@ -11,19 +11,12 @@ class Catalog
     }
 
     public static function getElements($query, $nav, \CRestServer $server)
-    {
-        // $navData = static::getNavData($nav, true);
-
-        ob_start();
-        print_r($query);
-        echo "\n=========================\n";
-        print_r($nav);
-        $debug = ob_get_contents();
-        ob_end_clean();
-        $fp = fopen($_SERVER['DOCUMENT_ROOT'].'/lk-params.log', 'w+');
-        fwrite($fp, $debug);
-        fclose($fp); 
-
+    {        
         return (new CatalogIblock())->getElementList($query['section_code']);
+    }
+    
+    public static function getElementDetail($query, $nav, \CRestServer $server)
+    {
+        return (new CatalogIblock())->getElementDetail($query['section_code'], $query['element_code']);
     }
 }

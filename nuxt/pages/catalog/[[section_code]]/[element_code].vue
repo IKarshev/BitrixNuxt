@@ -1,9 +1,6 @@
 <script setup lang="ts">
-    const route = useRoute()
+    import elementDetail from "@/components/catalog/elementDetail.vue";
 </script>
 <template>
-    <pre>
-        {{ route.params.section_code }} </br>
-        {{ route.params.element_code }}
-    </pre>
+    <elementDetail></elementDetail>
 </template>

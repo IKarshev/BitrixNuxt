@@ -6,4 +6,14 @@ export default defineNuxtConfig({
     '~/assets/css/reset.css',
     '~/assets/scss/main.scss',
   ],
+  app: {
+    pageTransition: { 
+      name: 'fade', 
+      mode: 'out-in' 
+    },
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in'
+    }
+  },
 })

@@ -8,7 +8,7 @@
         <div class="catalog-filter"></div>
 
         <div class="catalog-items">
-            <div class="catalog-items-item" v-for="(item, key) in elements.result">
+            <div class="catalog-items-item" v-if="elements.length > 0" v-for="(item, key) in elements">
                 <div class="label-row">
                     <div class="label">Акция</div>
                 </div>
@@ -24,14 +24,16 @@
                     </div>
                     <div class="button-container">
                         <div class="price">4 100 руб.</div>
-                        <a :href="item.DETAIL_PAGE_URL" class="btn-detail">Подробнее</a>
+                        <NuxtLink :to="item.DETAIL_PAGE_URL" class="btn-detail">Подробнее</NuxtLink>
+                        <!-- <a :href="item.DETAIL_PAGE_URL" class="btn-detail">Подробнее</a> -->
                     </div>
                     
                 </div>
             </div>
+            <div class="empty" v-else>Нет товаров</div>
         </div>
     </div>
-    <pre>{{ elements }}</pre>
+    <!-- <pre>{{ elements }}</pre> -->
 </template>
 
 <style lang="scss">

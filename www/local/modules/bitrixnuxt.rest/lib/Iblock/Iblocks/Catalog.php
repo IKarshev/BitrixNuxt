@@ -53,7 +53,7 @@ class Catalog extends AbstractIblock implements IblockInterface
 
             $IblockClass = \Bitrix\Iblock\Iblock::wakeUp($this->getIblockId())->getEntityDataClass();
             $elementList = $IblockClass::getList([
-                'select' => ['ID', 'CODE', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'NAME', 'IBLOCK_SECTION_ID', 'DETAIL_PAGE_URL' => 'IBLOCK.DETAIL_PAGE_URL'],
+                'select' => ['ID', 'CODE', 'NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'IBLOCK_SECTION_ID', 'DETAIL_PAGE_URL' => 'IBLOCK.DETAIL_PAGE_URL'],
                 'filter' => [
                     'IBLOCK_SECTION_ID' => $sectionId,
                 ],
@@ -70,5 +70,33 @@ class Catalog extends AbstractIblock implements IblockInterface
         }
 
         return $elementList ?? null;
+    }
+
+    public function getElementDetail(string $sectionCode, string $elementCode): ?array
+    {
+        if ($section = $this->getSections(['CODE' => $sectionCode], 1)) {
+            $sectionId = array_shift($section)['ID'];
+            
+            $IblockClass = \Bitrix\Iblock\Iblock::wakeUp($this->getIblockId())->getEntityDataClass();
+            $element = $IblockClass::getList([
+                'select' => ['ID', 'CODE', 'NAME', 'DETAIL_TEXT', 'DETAIL_PICTURE', 'IBLOCK_SECTION_ID'],
+                'filter' => [
+                    'CODE' => $elementCode,
+                    'IBLOCK_SECTION_ID' => $sectionId,
+                ],
+            ])->fetchAll();
+        
+            if (!empty($element)) {
+                $element = array_shift($element);
+            }
+
+            $element['DETAIL_PICTURE'] = [
+                'ID' => $element['DETAIL_PICTURE'],  
+                'SRC' => \CFile::GetPath($element['DETAIL_PICTURE']),  
+            ];
+            $element['DETAIL_PAGE_URL'] = \CIBlock::ReplaceDetailUrl($element['DETAIL_PAGE_URL'], $element, false, 'E');
+        
+            return $element;
+        }
     }
 }

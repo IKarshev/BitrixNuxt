@@ -18,6 +18,10 @@ class Base extends Controller
                     'callback' => ['Bitrixnuxt\\Rest\\RestRequests\\Catalog', 'getElements'],
                     'options' => array(),
                 ],
+                'getElementDetail' => [
+                    'callback' => ['Bitrixnuxt\\Rest\\RestRequests\\Catalog', 'getElementDetail'],
+                    'options' => array(),
+                ],
             ],
             // 'bitrixnuxt.rest' => [
             //     'bitrixnuxt.rest.getCatalogSectionList' => [
