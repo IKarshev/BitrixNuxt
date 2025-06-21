@@ -7,13 +7,14 @@ export default defineNuxtConfig({
     '~/assets/scss/main.scss',
   ],
   app: {
-    pageTransition: { 
-      name: 'fade', 
-      mode: 'out-in' 
-    },
-    layoutTransition: {
-      name: 'layout',
+    pageTransition: {
+      name: 'page', 
       mode: 'out-in'
-    }
+    },
   },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  }
 })

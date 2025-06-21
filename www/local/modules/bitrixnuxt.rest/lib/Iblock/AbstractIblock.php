@@ -50,4 +50,35 @@ abstract class AbstractIblock
         }
         return $pos;
     }
+
+    public function getSectionPageShowProps(): array
+    {
+        $listShowPropertyId = \Bitrix\Iblock\Model\PropertyFeature::getListPageShowPropertyCodes($this->iblockId);
+        $response = \Bitrix\Iblock\PropertyTable::getList(array(
+            'filter' => [
+                'IBLOCK_ID' => $this->iblockId,
+                '=ID' => $listShowPropertyId,
+            ],
+            'select' => ['*'],
+        ))->fetchAll();
+        return $response ?? [];
+    }
+
+    public function getDetailPageShowProps(): array
+    {
+        $detailShowPropertyId = \Bitrix\Iblock\Model\PropertyFeature::getDetailPageShowPropertyCodes($this->iblockId);
+        $response = \Bitrix\Iblock\PropertyTable::getList(array(
+            'filter' => [
+                'IBLOCK_ID' => $this->iblockId,
+                '=ID' => $detailShowPropertyId,
+            ],
+            'select' => ['*'],
+        ))->fetchAll();
+        return $response ?? [];
+    }
+
+    public function isPropertyMultiple($propObject): bool
+    {
+        return str_contains(get_class($propObject), 'Collection');
+    }
 }

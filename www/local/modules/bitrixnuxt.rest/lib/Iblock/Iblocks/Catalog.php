@@ -2,6 +2,7 @@
 namespace Bitrixnuxt\Rest\Iblock\Iblocks;
 
 use Bitrixnuxt\Rest\Iblock\{AbstractIblock, IblockInterface};
+use Bitrixnuxt\Rest\Iblock\IBlockQueryHelper;
 
 \Bitrix\Main\Loader::includeModule('iblock');
 
@@ -76,27 +77,37 @@ class Catalog extends AbstractIblock implements IblockInterface
     {
         if ($section = $this->getSections(['CODE' => $sectionCode], 1)) {
             $sectionId = array_shift($section)['ID'];
-            
-            $IblockClass = \Bitrix\Iblock\Iblock::wakeUp($this->getIblockId())->getEntityDataClass();
-            $element = $IblockClass::getList([
-                'select' => ['ID', 'CODE', 'NAME', 'DETAIL_TEXT', 'DETAIL_PICTURE', 'IBLOCK_SECTION_ID'],
+ 
+            // Получаем свойства, которые нужно отобразить для детальной страницы
+            if (!empty($detailPageShowProp = $this->getDetailPageShowProps())) {
+                $detailPageShowPropCodeList = array_column($detailPageShowProp, 'CODE');
+                foreach ($detailPageShowPropCodeList as &$value) {
+                    $value = 'PROPERTY_'.$value;
+                }
+            }
+
+            // Делаем запрос к бд
+            $IBlockQueryHelper = new IBlockQueryHelper($this->iblockId);
+            $iblockQuery = $IBlockQueryHelper->getList([
+                'select' => array_merge(
+                    ['ID', 'CODE', 'NAME', 'DETAIL_TEXT', 'DETAIL_PICTURE', 'IBLOCK_SECTION_ID'],
+                    $detailPageShowPropCodeList ?? []
+                ),
                 'filter' => [
                     'CODE' => $elementCode,
                     'IBLOCK_SECTION_ID' => $sectionId,
                 ],
-            ])->fetchAll();
-        
-            if (!empty($element)) {
-                $element = array_shift($element);
+            ]);
+            if (!empty($iblockQuery)) {
+                $element = array_shift($iblockQuery);
+                $element['DETAIL_PICTURE'] = [
+                    'ID' => $element['DETAIL_PICTURE'],  
+                    'SRC' => \CFile::GetPath($element['DETAIL_PICTURE']),  
+                ];
+                $element['DETAIL_PAGE_URL'] = \CIBlock::ReplaceDetailUrl($element['DETAIL_PAGE_URL'], $element, false, 'E');
             }
 
-            $element['DETAIL_PICTURE'] = [
-                'ID' => $element['DETAIL_PICTURE'],  
-                'SRC' => \CFile::GetPath($element['DETAIL_PICTURE']),  
-            ];
-            $element['DETAIL_PAGE_URL'] = \CIBlock::ReplaceDetailUrl($element['DETAIL_PAGE_URL'], $element, false, 'E');
-        
-            return $element;
+            return $element ?? null;
         }
     }
 }
