@@ -108,9 +108,36 @@ class IBlockQueryHelper
             )->fetchCollection();
 
             foreach ($queryResult as $queryResultItem) {
-                // Получаем поля
                 foreach ($selectFields as $FieldName) {
-                    $result[$queryResultItem->get('ID')][$FieldName] = $queryResultItem->get($FieldName);
+                    $fieldObject = $queryResultItem->get($FieldName);
+                    switch ($FieldName) {
+                        case 'SECTIONS':
+                            $result[$queryResultItem->get('ID')][$FieldName] = $fieldObject;
+                            // if ($this->isPropertyMultiple($fieldObject)) {
+                            //     foreach ($fieldObject->getAll() as $sectionCollection) {
+                            //         foreach ($sectionCollection as $section) {
+                            //             $result[$queryResultItem->get('ID')][$FieldName][] = [
+                            //                 'ID' => $section->getId(),
+                            //                 'CODE' => $section->getCode(),
+                            //                 'NAME' => $section->getName(),
+                            //             ];
+                            //         }
+                            //     }  
+                            // } else {
+                            //     foreach ($fieldObject->getSections()->getAll() as $section) {
+                            //         $result[$queryResultItem->get('ID')][$FieldName][] = [
+                            //             'ID' => $section->getId(),
+                            //             'CODE' => $section->getCode(),
+                            //             'NAME' => $section->getName(),
+                            //         ];
+                            //     }  
+                            // }
+                            break;
+                        
+                        default:
+                            $result[$queryResultItem->get('ID')][$FieldName] = $fieldObject;
+                            break;
+                    }
                 }
 
                 // Получаем значения полей

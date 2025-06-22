@@ -90,7 +90,7 @@ class Catalog extends AbstractIblock implements IblockInterface
             $IBlockQueryHelper = new IBlockQueryHelper($this->iblockId);
             $iblockQuery = $IBlockQueryHelper->getList([
                 'select' => array_merge(
-                    ['ID', 'CODE', 'NAME', 'DETAIL_TEXT', 'DETAIL_PICTURE', 'IBLOCK_SECTION_ID'],
+                    ['ID', 'CODE', 'NAME', 'SECTIONS', 'DETAIL_TEXT', 'DETAIL_PICTURE', 'IBLOCK_SECTION_ID'],
                     $detailPageShowPropCodeList ?? []
                 ),
                 'filter' => [
@@ -105,6 +105,11 @@ class Catalog extends AbstractIblock implements IblockInterface
                     'SRC' => \CFile::GetPath($element['DETAIL_PICTURE']),  
                 ];
                 $element['DETAIL_PAGE_URL'] = \CIBlock::ReplaceDetailUrl($element['DETAIL_PAGE_URL'], $element, false, 'E');
+                // $element['SECTION'] = [
+                //     'ID' => $element['SECTIONS']->getId(),
+                //     'CODE' => $element['SECTIONS']->getCode(),
+                //     'NAME' => $element['SECTIONS']->getName(),
+                // ];
             }
 
             return $element ?? null;

@@ -2,5 +2,9 @@
     import elementDetail from "@/components/catalog/elementDetail.vue";
 </script>
 <template>
-    <elementDetail></elementDetail>
+    <div class="wrapper">
+        <div class="container">
+            <elementDetail></elementDetail>
+        </div>
+    </div>
 </template>

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreyryabin/sprint.migration.git",
-                "reference": "ce03248d386b653681f07d8420d38ec2bc5467b0"
+                "reference": "4f99ca5d3c5cb14a3c3178ab7d1fb6a96c2973c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/ce03248d386b653681f07d8420d38ec2bc5467b0",
-                "reference": "ce03248d386b653681f07d8420d38ec2bc5467b0",
+                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/4f99ca5d3c5cb14a3c3178ab7d1fb6a96c2973c4",
+                "reference": "4f99ca5d3c5cb14a3c3178ab7d1fb6a96c2973c4",
                 "shasum": ""
             },
             "require": {
@@ -51,9 +51,9 @@
             ],
             "support": {
                 "issues": "https://github.com/andreyryabin/sprint.migration/issues",
-                "source": "https://github.com/andreyryabin/sprint.migration/tree/5.0.2"
+                "source": "https://github.com/andreyryabin/sprint.migration/tree/5.0.6"
             },
-            "time": "2025-05-02T22:26:08+00:00"
+            "time": "2025-06-20T18:21:33+00:00"
         },
         {
             "name": "composer/installers",
