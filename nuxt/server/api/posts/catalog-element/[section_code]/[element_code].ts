@@ -1,7 +1,8 @@
-import { geElementDetailUrl } from '@/data/posts'
+import { getApiUrl } from '~/server/utils/api'
 
 export default defineEventHandler(async (event) => {
     const { section_code, element_code } = getRouterParams(event)
-    const data = await $fetch(geElementDetailUrl() + `?section_code=${section_code}&element_code=${element_code}`);
+    const url = getApiUrl(`getElementDetail/?section_code=${section_code}&element_code=${element_code}`)
+    const data = await $fetch(url);
     return data.result;
 })

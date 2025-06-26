@@ -1,7 +1,8 @@
-import { getPostCatalogElementsUrl } from '@/data/posts'
+import { getApiUrl } from '~/server/utils/api'
 
 export default defineEventHandler(async (event) => {
     const { section_code } = getRouterParams(event)
-    const data = await $fetch(getPostCatalogElementsUrl() + `?section_code=${section_code}`);
+    const url = getApiUrl(`getElements/?section_code=${section_code}`)
+    const data = await $fetch(url);
     return data.result;
-})
+}) 

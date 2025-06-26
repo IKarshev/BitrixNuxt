@@ -1,6 +1,7 @@
-import { getPostCatalogElementsUrl } from '@/data/posts'
+import { getApiUrl } from '~/server/utils/api'
 
 export default defineEventHandler(async (event) => {
-    const data = await $fetch(getPostCatalogElementsUrl());
+    const url = getApiUrl('getElements')
+    const data = await $fetch(url);
     return data.result;
 })
