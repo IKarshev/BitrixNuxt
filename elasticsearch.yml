@@ -1,0 +1,11 @@
+services:
+  elasticsearch:
+    container_name: ${COMPOSE_PROJECT_NAME}-elasticsearch
+    image: elasticsearch:7.17.22
+    ports:
+      - "9200:9200"
+    networks: 
+      - ${COMPOSE_NETWORK_NAME}
+    environment:
+      - discovery.type=single-node
+    restart: ${COMPOSE_RESTART_POLICY}

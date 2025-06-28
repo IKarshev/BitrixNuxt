@@ -6,7 +6,8 @@
     },
     "require": {
         "monolog/monolog": "^3.9",
-        "andreyryabin/sprint.migration": "dev-master"
+        "andreyryabin/sprint.migration": "dev-master",
+        "sheerockoff/bitrix-elastic-indexer": "^0.1.5"
     },
     "config": {
         "allow-plugins": {
